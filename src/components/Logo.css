@@ -1,0 +1,23 @@
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light-color);
+    position: relative;
+}
+
+.logo span {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    bottom: -5px;
+    left: 0;
+}

@@ -1,13 +1,43 @@
+/* Define color palette */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #a855f7;
+  --accent-color: #ec4899;
+  --dark-color: #0a0a16;
+  --darker-color: #050510;
+  --light-color: #f8fafc;
+  --text-color: #e2e8f0;
+  --text-light: #94a3b8;
+  --success-color: #10b981;
+}
+::selection {
+    background: var(--accent-color);
+    color: var(--light-color);
+}
+/* Apply global styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--darker-color); /* Entire background is darker color */
+  color: var(--text-color);              /* Default text color */
+}
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
