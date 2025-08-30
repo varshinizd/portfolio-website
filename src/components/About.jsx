@@ -24,8 +24,12 @@ const About = () => {
             I focus on creating end-to-end solutions that bring ideas to life while continuously learning and improving.
           </p>
           <div className="hero-buttons">
-            <a className="mywork-btn-about" href="#projects">View My Work</a>
-            <a href="/Varshini_D_Resume.pf" download className="my-download-btn">My Resume</a>
+            <a className="mywork-btn-about" href="#projects">View My Work
+              <i class="fa fa-arrow-down"></i>
+            </a>
+            <a href="/Varshini_D_Resume.pdf" download className="my-download-btn">My Resume
+            <i class="fa fa-download"></i>
+            </a>
           </div>
 
         </div>

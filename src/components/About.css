@@ -66,7 +66,7 @@
     font-size: 1.8rem;
     margin-bottom: 2rem;
     color: var(--text-light);
-    line-height: 1.6;   /* 👈 add */
+    line-height: 1.6;
 }
 
 .hero-description {
@@ -74,335 +74,168 @@
     margin-bottom: 2.5rem;
     max-width: 600px;
     color: var(--text-light);
-    line-height: 1.8;   /* 👈 add */
+    line-height: 1.8;
 }
 
 .hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle-wrapper {
-  position: relative;
-  width: 350px;
-  height: 350px;
+    position: relative;
+    width: 350px;
+    height: 350px;
 }
 
 .profile-pic {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  position: relative;
-  z-index: 3;
-  border: 5px solid var(--primary-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+    border: 5px solid var(--primary-color);
 }
 
 /* Base circle style */
 .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  transform: translate(-50%, -50%);
-  animation: spinning linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transform: translate(-50%, -50%);
+    animation: spinning linear infinite;
 }
 
-/* Circle variations */
 .circle1 {
-  width: 400px;
-  height: 400px;
-  border-top-color: var(--primary-color);
-  animation-duration: 0.5s;
+    width: 400px;
+    height: 400px;
+    border-top-color: var(--primary-color);
+    animation-duration: 0.5s;
 }
 
 .circle2 {
-  width: 450px;
-  height: 450px;
-  border-top-color: var(--secondary-color);
-  animation-duration: 3s;
+    width: 450px;
+    height: 450px;
+    border-top-color: var(--secondary-color);
+    animation-duration: 3s;
 }
 
 .circle3 {
-  width: 500px;
-  height: 500px;
-  border-top-color: var(--accent-color);
-  animation-duration: 1s;
+    width: 500px;
+    height: 500px;
+    border-top-color: var(--accent-color);
+    animation-duration: 1s;
 }
 
-/* Spin animation */
 @keyframes spinning {
-  0%   { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* ✅ Responsiveness */
-@media (max-width: 1024px) {
-  .hero-container {
-    gap: 5rem;
-    grid-template-columns: 1fr 1fr; /* shrink grid on tablet */
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
-
-  .circle-wrapper {
-    width: 280px;
-    height: 280px;
-  }
-
-  .circle1 { width: 320px; height: 320px; }
-  .circle2 { width: 360px; height: 360px; }
-  .circle3 { width: 400px; height: 400px; }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr; /* stack text + image */
-    gap: 3rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    order: 2; /* text below image (optional) */
-  }
-
-  .hero-image {
-    order: 1;
-    justify-content: center;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-    margin: 0 auto 2rem;
-  }
-
-  .mywork-btn-about {
-    padding: 15px 30px;
-    font-size: 18px;
-  }
-
-  .circle-wrapper {
-    width: 220px;
-    height: 220px;
-  }
-
-  .circle1 { width: 250px; height: 250px; }
-  .circle2 { width: 280px; height: 280px; }
-  .circle3 { width: 310px; height: 310px; }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 6rem 1rem 3rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
-  .circle-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-
-  .circle1 { width: 200px; height: 200px; }
-  .circle2 { width: 230px; height: 230px; }
-  .circle3 { width: 260px; height: 260px; }
-}
-
-/* 🔹 Common button base */
+/* Hero Buttons */
 .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .mywork-btn-about,
 .my-download-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
-  overflow: hidden; /* 🔑 keeps animation inside */
-  transition: all 0.35s ease;
-  white-space: nowrap;
-}
-
-/* 🔹 Gradient Button (View My Works) */
-.mywork-btn-about {
-  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-  color: var(--light-color);
-  border: none;
-}
-
-/* Add arrow hidden initially */
-.mywork-btn-about::after {
-  content: "⬇";
-  position: absolute;
-  bottom: -20px;   /* hidden below */
-  font-size: 1.2rem;
-  opacity: 0;
-  transition: all 0.35s ease;
-}
-
-/* Hover animation */
-.mywork-btn-about:hover {
-  padding-bottom: 2.5rem;   /* expands downward */
-}
-
-.mywork-btn-about:hover::after {
-  bottom: 10px;   /* arrow slides up into view */
-  opacity: 1;
-}
-
-.my-download-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem; /* natural gap between text and arrow */
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: var(--light-color);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.35s ease;
-  overflow: hidden;
-}
-
-/* Arrow sits inline, starts hidden */
-.my-download-btn::after {
-  content: "⭳";
-  opacity: 0;
-  transform: translateX(-8px); /* slightly tucked in */
-  transition: all 0.35s ease;
-  font-size: 1.2rem;
-}
-
-/* On hover: expand right & reveal arrow smoothly */
-.my-download-btn:hover {
-  padding-right: 2.8rem; /* smooth expansion */
-}
-
-.my-download-btn:hover::after {
-  opacity: 1;
-  transform: translateX(0); /* slides into place beside text */
-}
-
-
-
-
-/* 📱 Tablet */
-@media (max-width: 1024px) {
-  .mywork-btn-about,
-  .my-download-btn {
-    font-size: 1rem;
-    padding: 0.9rem 1.8rem;
-  }
-
-  .mywork-btn-about::after,
-  .my-download-btn::after {
-    font-size: 1.05rem;
-  }
-
-  .my-download-btn:hover {
-    padding-right: 2.4rem; /* slightly less expansion */
-  }
-
-  .mywork-btn-about:hover {
-    padding-bottom: 2rem; /* slightly less drop */
-  }
-}
-
-/* 📱 Mobile (<=768px) */
-@media (max-width: 768px) {
-  .hero-buttons {
-    flex-direction: column; /* stack vertically */
-    gap: 1rem;
-  }
-
-  .mywork-btn-about,
-  .my-download-btn {
-    font-size: 0.95rem;
-    padding: 0.85rem 1.6rem;
-    width: 100%;           /* full width on small screens */
-    max-width: 320px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-  }
-
-  .mywork-btn-about::after,
-  .my-download-btn::after {
-    font-size: 1rem;
-  }
-
-  .my-download-btn:hover {
-    padding-right: 2rem; /* controlled expansion */
-  }
-
-  .mywork-btn-about:hover {
-    padding-bottom: 1.8rem;
-  }
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    white-space: nowrap;
 }
 
-/* 📱 Small Mobile (<=480px) */
+/* Gradient Button */
+.mywork-btn-about {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: var(--light-color);
+    border: none;
+}
+
+/* Download Button */
+.my-download-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--light-color);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    font-weight: 600;
+}
+
+/* Icon hidden initially */
+.mywork-btn-about i,
+.my-download-btn i {
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.35s ease;
+}
+
+/* Show icon on hover */
+.mywork-btn-about:hover i,
+.my-download-btn:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add smooth horizontal padding on hover */
+.mywork-btn-about:hover {
+    padding-right: 2.8rem;
+}
+
+.my-download-btn:hover {
+    padding-right: 2.8rem;
+}
+
+/* ✅ Responsiveness */
+@media (max-width: 1024px) {
+    .hero-container { gap: 5rem; grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.4rem; }
+    .circle-wrapper { width: 280px; height: 280px; }
+    .circle1 { width: 320px; height: 320px; }
+    .circle2 { width: 360px; height: 360px; }
+    .circle3 { width: 400px; height: 400px; }
+    .mywork-btn-about, .my-download-btn { font-size: 1rem; padding: 0.9rem 1.8rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-container { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-content { order: 2; }
+    .hero-image { order: 1; justify-content: center; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .hero-description { font-size: 1rem; margin: 0 auto 2rem; }
+    .circle-wrapper { width: 220px; height: 220px; }
+    .circle1 { width: 250px; height: 250px; }
+    .circle2 { width: 280px; height: 280px; }
+    .circle3 { width: 310px; height: 310px; }
+    .hero-buttons { flex-direction: column; gap: 1rem; }
+}
+
 @media (max-width: 480px) {
-  .mywork-btn-about,
-  .my-download-btn {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.4rem;
-    max-width: 260px;
-  }
-
-  .mywork-btn-about::after,
-  .my-download-btn::after {
-    font-size: 0.9rem;
-  }
-
-  .my-download-btn:hover {
-    padding-right: 1.8rem;
-  }
-
-  .mywork-btn-about:hover {
-    padding-bottom: 1.6rem;
-  }
+    .hero { padding: 6rem 1rem 3rem; }
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-description { font-size: 0.95rem; }
+    .circle-wrapper { width: 180px; height: 180px; }
+    .circle1 { width: 200px; height: 200px; }
+    .circle2 { width: 230px; height: 230px; }
+    .circle3 { width: 260px; height: 260px; }
+    .mywork-btn-about, .my-download-btn { font-size: 0.9rem; padding: 0.8rem 1.4rem; max-width: 260px; }
 }
