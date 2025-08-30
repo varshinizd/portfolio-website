@@ -83,13 +83,14 @@
   background-clip: padding-box, border-box;
 }
 
+/* Remove glow on focus */
 .contact input:focus,
 .contact textarea:focus {
   border-color: transparent;
   background-image: 
     linear-gradient(var(--dark-color), var(--dark-color)),
-    linear-gradient(135deg, var(--accent-color), var(--primary-color));
-  box-shadow: 0 0 10px var(--accent-color);
+    linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  box-shadow: none;  /* 🔹 Glow removed */
 }
 
 /* Button */
