@@ -239,3 +239,12 @@
     .circle3 { width: 260px; height: 260px; }
     .mywork-btn-about, .my-download-btn { font-size: 0.9rem; padding: 0.8rem 1.4rem; max-width: 260px; }
 }
+
+/* Make the icons smaller */
+.mywork-btn-about i,
+.my-download-btn i {
+    font-size: 0.8rem; /* adjust this value as needed */
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.35s ease;
+}
