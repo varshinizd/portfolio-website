@@ -150,7 +150,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
     font-weight: 700;
     font-size: 1.1rem;
     padding: 1rem 2rem;
@@ -158,8 +157,8 @@
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
-    transition: all 0.35s ease;
     white-space: nowrap;
+    transition: all 0.35s ease;
 }
 
 /* Gradient Button */
@@ -178,11 +177,13 @@
     font-weight: 600;
 }
 
-/* Icon hidden initially */
+/* Icon absolutely positioned */
 .mywork-btn-about i,
 .my-download-btn i {
+    position: absolute;      /* 🟢 key fix */
+    right: 1rem;             /* distance from right edge */
+    font-size: 0.8rem;       /* smaller size */
     opacity: 0;
-    transform: translateX(-5px);
     transition: all 0.35s ease;
 }
 
@@ -190,8 +191,8 @@
 .mywork-btn-about:hover i,
 .my-download-btn:hover i {
     opacity: 1;
-    transform: translateX(0);
 }
+
 
 /* Add smooth horizontal padding on hover */
 .mywork-btn-about:hover {
