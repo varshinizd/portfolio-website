@@ -23,8 +23,7 @@ const ProjectCard = ({ title, description, techstack, image, github, demo }) => 
 
       <div className="project-links">
         {demo && (
-          <a href={demo} target="_blank" rel="noopener noreferrer">
-            Live Demo
+          <a href={demo} target="_blank" rel="noopener noreferrer">Demo
           </a>
         )}
         {github && (

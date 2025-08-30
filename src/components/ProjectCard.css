@@ -1,65 +1,132 @@
+/* ================= Project Card (Gradient Border Always On) ================= */
 .project-card {
+  box-sizing: border-box;
+  position: relative;
   display: flex;
-  flex-direction: column; /* stack children vertically */
-  align-items: center;    /* center horizontally */
-  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 2rem;
   border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
-  line-height: 1;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  line-height: 1.4;
   color: var(--light-color);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease;
   overflow: hidden;
-  gap: 15px; /* spacing between elements */
+  isolation: isolate;
+
+  /* Inside background (match your page background) */
+  /* If your page bg differs, set --page-bg on :root */
+  background: var(--page-bg, #0d0d1a);
+
+  /* Primary: gradient border via border-image */
+  border: 2px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    90deg,
+    var(--primary-color, #ff7ad3),
+    var(--accent-color, #8a7dff)
+  );
+
+  /* Fallback: layered background paints the border if border-image gets ignored */
+  background:
+    linear-gradient(var(--page-bg, #0d0d1a), var(--page-bg, #0d0d1a)) padding-box,
+    linear-gradient(90deg,
+      var(--primary-color, #ff7ad3),
+      var(--accent-color, #8a7dff)
+    ) border-box !important; /* ensure it wins over older background rules */
+
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
+.project-card:hover { transform: translateY(-8px); }
 
+/* Nuke the old pseudo-element border if it still exists anywhere */
+.project-card::before { content: none !important; display: none !important; }
+
+/* Optional: remove any outlines that can look like a grey border */
+.project-card:focus { outline: none; }
+
+/* ------- Content styles ------- */
 .project-image {
   width: 100%;
-  height: auto;        /* keep image aspect ratio */
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 .project-title {
-  font-size: 1.4rem;
-  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 700;
   text-align: center;
+  background: linear-gradient(90deg,
+    var(--primary-color, #ff7ad3),
+    var(--accent-color, #8a7dff)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .project-description {
   font-size: 1rem;
-  color: var(--text-light);
   text-align: center;
+  color: var(--text-light, #cfd3dc);
+  line-height: 1.6;
 }
+
+.read-more-btn {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--primary-color, #ff7ad3);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.read-more-btn:hover { color: var(--accent-color, #8a7dff); }
 
 .project-links {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
 }
-
 .project-links a {
   text-decoration: none;
   font-weight: 600;
-  color: #6366f1;
-  transition: color 0.3s;
+  color: var(--accent-color, #8a7dff);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .project-links a:hover {
-  color: #ec4899;
+  color: var(--primary-color, #ff7ad3);
+  transform: translateY(-2px);
 }
 
-.read-more-btn
-{
-  color: var(--primary-color);
-  text-decoration: underline;
+/* ----------------- Responsive ----------------- */
+@media (max-width: 1024px) {
+  .project-card { padding: 1.5rem; border-radius: 40px; }
+  .project-title { font-size: 1.3rem; }
+  .project-description { font-size: 0.95rem; }
+  .read-more-btn { font-size: 0.95rem; line-height: 1.55; }
+}
+@media (max-width: 768px) {
+  .project-card { padding: 1.2rem; border-radius: 35px; }
+  .project-image { height: 180px; }
+  .project-title { font-size: 1.2rem; }
+  .project-description { font-size: 0.9rem; }
+  .project-links { gap: 15px; }
+  .read-more-btn { font-size: 0.9rem; line-height: 1.5; }
+}
+@media (max-width: 480px) {
+  .project-card { padding: 1rem; border-radius: 30px; }
+  .project-image { height: 100%; }
+  .project-title { font-size: 1.1rem; }
+  .project-description { font-size: 0.85rem; }
+  .project-links { flex-direction: column; gap: 10px; }
+  .read-more-btn { font-size: 0.85rem; line-height: 1.45; }
 }

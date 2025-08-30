@@ -40,7 +40,6 @@ const Header = () => {
           <a href="#about" className="nav-link" onClick={() => setMenuOpen(false)}>About</a>
           <a href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>Projects</a>
           <a href="#skills" className="nav-link" onClick={() => setMenuOpen(false)}>Skills</a>
-          <a href="#achievements" className="nav-link" onClick={() => setMenuOpen(false)}>Achievements</a>
           <a href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
       </div>

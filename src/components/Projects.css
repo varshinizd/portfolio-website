@@ -1,67 +1,196 @@
-.projects-grid 
-{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
-  justify-items: center;
-}
-
-
-.projects-heading { 
+/* ----------------- Projects Section ----------------- */
+.projects-heading {
   text-align: center;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
+  margin: 75px 0 2rem 0;
+  
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color)); /* ✅ gradient as background */
+  -webkit-background-clip: text; /* required for WebKit browsers */
+  -webkit-text-fill-color: transparent; /* required for WebKit browsers */
+  background-clip: text; /* standard property */
+  color: transparent; /* fallback */
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  justify-items: center;
+  margin-bottom: 100px; /* Adjusted below in media query */
+}
+
+/* ----------------- Project Card ----------------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--light-color);
-  margin: 75px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s ease;
+  overflow: hidden;
+  gap: 15px;
 }
 
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  text-align: center;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.read-more-btn {
+  font-size: 1rem; /* match description */
+  line-height: 1.6;
+  color: var(--primary-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: var(--accent-color);
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* ----------------- Responsive ----------------- */
+
+/* Mobile (≤600px) */
 @media (max-width: 600px) {
-  .projects-grid {
-    margin: 50px;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 10px;
+  .projects-heading {
+    font-size: 2rem;
+    margin: 50px 0 1.5rem 0;
   }
 
-  .projects-heading {
-    font-size: 2rem;  
-    margin: 20px 0;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 10px;
+    margin-bottom: 80px;
+  }
+
+  .project-card {
+    padding: 20px;
+    border-radius: 35px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description,
+  .read-more-btn {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .project-links {
+    gap: 12px;
+    flex-direction: column;
   }
 }
 
-
+/* Tablet (601px - 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+  .projects-heading {
+    font-size: 2.5rem;
+    margin: 60px 0 2rem 0;
+  }
+
   .projects-grid {
-    margin: 20px;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     padding: 0 15px;
+    margin-bottom: 90px;
   }
 
-  .projects-heading {
-    font-size: 2.5rem;
-    margin: 30px 0;
+  .project-card {
+    padding: 25px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description,
+  .read-more-btn {
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 }
 
-
+/* Desktop (≥1025px) */
 @media (min-width: 1025px) {
-  .projects-grid {
-    margin: 100px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
-  }
-
   .projects-heading {
     font-size: 3rem;
-    margin: 40px 0 2rem 0;
+    margin: 75px 0 2rem 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 40px; /* Increased side padding for more horizontal space */
+    margin-bottom: 120px; /* Maintained increased margin from previous update */
+  }
+
+  .project-card {
+    padding: 30px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+
+  .project-description,
+  .read-more-btn {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
-
-
-
-
-/* 📲 Tablet (601px - 1024px) */
-/* 💻 Desktop (above 1024px) */

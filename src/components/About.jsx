@@ -3,7 +3,7 @@ import bgImage from '../assets/pattern.jpg'; // 👈 import image
 import myPhoto from '../assets/myimage.jpg';
 const About = () => {
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="about">
       {/* Background div with inline style */}
       <div
         className="hero-background"
@@ -25,7 +25,7 @@ const About = () => {
           </p>
           <div className="hero-buttons">
             <a className="mywork-btn-about" href="#projects">View My Work</a>
-            <a href="/Varshini_D_Resume.pdf" download className="my-download-btn">My Resume</a>
+            <a href="/Varshini_D_Resume.pf" download className="my-download-btn">My Resume</a>
           </div>
 
         </div>

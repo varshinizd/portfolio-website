@@ -20,6 +20,9 @@
     color: var(--light-color);
 }
 /* Apply global styles */
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
@@ -41,3 +44,6 @@ a {
     transition: all 0.3s ease;
 }
 
+section {
+  scroll-margin-top: 80px; /* adjust to your header height */
+}
