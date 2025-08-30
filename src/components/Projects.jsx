@@ -33,7 +33,7 @@ const Projects = () => {
         description: "Developed a responsive portfolio website to showcase projects and skills. Implemented interactive UI elements and animations for enhanced user experience. Deployed the application with a clean and professional layout.",
         techstack: "React, CSS",
         image: personal_portfolio,
-        demo: "#",
+        demo: "https://portfolio-website-teal-theta-86.vercel.app/",
         github: "https://github.com/username/portfolio"
     }
   ];
