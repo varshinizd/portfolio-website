@@ -37,7 +37,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(180%);
 
   /* Rounded Gradient Border */
-  border: 3px solid transparent;
+  border: 1px solid transparent;
   border-radius: 30px;
   background-image: 
     linear-gradient(var(--darker-color), var(--darker-color)),
@@ -69,7 +69,7 @@
 .contact textarea {
   padding: 14px 18px;
   border-radius: 12px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.08);
   color: var(--light-color);
   font-size: 1rem;
